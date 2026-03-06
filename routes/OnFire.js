@@ -21,7 +21,7 @@ module.exports = (db) => {
       } = req.body;
 
       // Guardamos en la colección "Onfire_Logs" (o la que prefieras)
-      const docRef = await db.collection("Sensores_Onfire").add({
+      const docRef = await db.collection("Sensor").add({
         fecha,
         temp,
         hum,
@@ -47,7 +47,7 @@ module.exports = (db) => {
   // Ruta para visualizar los datos guardados
   router.get("/ver", async (req, res) => {
     try {
-      const items = await db.collection("Sensores_Onfire").orderBy("recibido_el", "desc").get();
+      const items = await db.collection("Sensor").orderBy("recibido_el", "desc").get();
       const registros = items.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
