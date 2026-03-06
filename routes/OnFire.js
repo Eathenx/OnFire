@@ -33,7 +33,6 @@ module.exports = (db) => {
         co2_random,
         viento_vel,
         viento_dir,
-        recibido_el: new Date().toISOString() // Marca de tiempo del servidor
       });
 
       console.log(`Datos recibidos del sensor ${id_sensor}. ID Documento: ${docRef.id}`);
@@ -47,7 +46,7 @@ module.exports = (db) => {
   // Ruta para visualizar los datos guardados
   router.get("/ver", async (req, res) => {
     try {
-      const items = await db.collection("Sensor").orderBy("recibido_el", "desc").get();
+      const items = await db.collection("Sensor").get();
       const registros = items.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
