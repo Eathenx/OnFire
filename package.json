@@ -1,0 +1,25 @@
+{
+  "name": "git",
+  "version": "1.0.0",
+  "description": "\"# Gaming\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eathenx/Gaming.git"
+  },
+  "author": "Eathenx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eathenx/Gaming/issues"
+  },
+  "homepage": "https://github.com/Eathenx/Gaming#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^13.5.0"
+  }
+}
